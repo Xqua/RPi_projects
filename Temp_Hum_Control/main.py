@@ -86,7 +86,7 @@ class Controler:
         h = int(time.strftime("%H"))
 
         humidity, temperature = None, None
-        while humidity is not None and temperature is not None:
+        while humidity is None and temperature is None:
             humidity, temperature = self.Read_Temp_Humidity()
 
         if humidity < self.target_humidity - 1:
