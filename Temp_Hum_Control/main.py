@@ -48,6 +48,16 @@ class Controler:
                           0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
         self.humidity_low = False
 
+    def Test_pins(self):
+        tmp = {}
+        for p in self.pin_map.keys():
+            if 'IN' in p:
+                GPIO.output(self.pin_map[p], GPIO.LOW)
+                time.sleep(1)
+                GPIO.output(self.pin_map[p], GPIO.HIGH)
+                tmp[self.pin_map[p]] = raw_input("Which IN turned ON")
+        print tmp
+
     def Read_Temp_Humidity(self):
         humidity, temperature = Adafruit_DHT.read_retry(
             self.sensor, self.pin_map['DHT11'])
