@@ -95,16 +95,16 @@ class Controler:
                 self.Control('fan', 'OFF')
                 self.humidity_low = True
             self.Control('humidifier', 'ON')
-            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
+            print 'Temp=%s*C  Humidity=%s' % (temperature, humidity)
         else:
-            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
+            print 'Temp=%s*C  Humidity=%s' % (temperature, humidity)
             self.Control('humidifier', 'OFF')
 
         if temperature < self.target_temp - 1:
-            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
+            print 'Temp=%s*C  Humidity=%s' % (temperature, humidity)
             self.Control('heater', 'ON')
         else:
-            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
+            print 'Temp=%s*C  Humidity=%s' % (temperature, humidity)
             self.Control('heater', 'OFF')
 
         if self.lamp_hours[h] == 1:
