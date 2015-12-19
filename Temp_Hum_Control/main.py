@@ -70,7 +70,7 @@ class Controler:
     def Read_Temp_Humidity(self):
         humidity, temperature = Adafruit_DHT.read_retry(
             self.sensor, self.pin_map['DHT11'])
-        return humidity. temperature
+        return humidity, temperature
 
     def Control(self, tool, state):
         if state == 'ON' and self.state[tool] is False:
