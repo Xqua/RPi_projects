@@ -18,10 +18,10 @@ class Controler:
             'DHT11': 21
         }
         self.tools = {
-            'humidifier': 'IN1',
-            'fan': 'IN2',
-            'lamp': 'IN3',
-            'heater': 'IN4'
+            'humidifier': 'IN3',
+            'fan': 'IN4',
+            'lamp': 'IN5',
+            'heater': 'IN6'
         }
         self.state = {
             'humidifier': False,
@@ -87,17 +87,17 @@ class Controler:
                 self.Control('fan', 'OFF')
                 self.humidity_low = True
             self.Control('humidifier', 'ON')
-            print 'Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity)
+            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
         else:
+            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
             self.Control('humidifier', 'OFF')
-            print 'Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity)
 
         if temperature < self.target_temp - 1:
-            print 'Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity)
+            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
             self.Control('heater', 'ON')
         else:
+            print 'Temp=%s*C  Humidity=%s%' % (temperature, humidity)
             self.Control('heater', 'OFF')
-            print 'Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity)
 
         if self.lamp_hours[h] == 1:
             self.Control('lamp', 'ON')
