@@ -39,6 +39,14 @@ class Controler:
         GPIO.setup(self.pin_map['IN6'], GPIO.OUT)
         GPIO.setup(self.pin_map['IN7'], GPIO.OUT)
         GPIO.setup(self.pin_map['IN8'], GPIO.OUT)
+        GPIO.output(self.pin_map['IN1'], GPIO.LOW)
+        GPIO.output(self.pin_map['IN2'], GPIO.LOW)
+        GPIO.output(self.pin_map['IN3'], GPIO.LOW)
+        GPIO.output(self.pin_map['IN4'], GPIO.LOW)
+        GPIO.output(self.pin_map['IN5'], GPIO.LOW)
+        GPIO.output(self.pin_map['IN6'], GPIO.LOW)
+        GPIO.output(self.pin_map['IN7'], GPIO.LOW)
+        GPIO.output(self.pin_map['IN8'], GPIO.LOW)
         # GPIO.setup(self.pin_map['DHT11'], GPIO.IN)
         self.sensor = Adafruit_DHT.DHT11
         self.target_temp = 24
