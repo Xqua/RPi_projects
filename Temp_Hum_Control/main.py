@@ -55,6 +55,8 @@ class Controler:
                            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
         self.fan_hours = [0, 1, 0, 0, 0, 1, 0, 1, 0, 1,
                           0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+        self.fan_hours = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                          1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         self.humidity_low = False
 
     def Test_pins(self):
