@@ -30,6 +30,7 @@ class Controler:
             'heater': False
         }
         print "Initializing GPIOs"
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.pin_map['IN1'], GPIO.OUT)
         GPIO.setup(self.pin_map['IN2'], GPIO.OUT)
         GPIO.setup(self.pin_map['IN3'], GPIO.OUT)
