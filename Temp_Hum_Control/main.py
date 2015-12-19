@@ -84,6 +84,16 @@ class Controler:
             self.state[tool] = False
             print "Turning %s : %s" % (tool, state)
 
+    def log(self):
+        f = open('box_log', 'a')
+        humidity, temperature = None, None
+        while humidity is None and temperature is None:
+            humidity, temperature = self.Read_Temp_Humidity()
+        tmp = [temperature, humidity, self.state['humidifier'],
+               self.state['fan'], self.state['lamp'], self.state['heater']]
+        f.write(','.join(tmp) + '\n')
+        f.close()
+
     def run(self):
         h = int(time.strftime("%H"))
 
@@ -122,6 +132,11 @@ class Controler:
 
 if __name__ == '__main__':
     Controler = Controler()
+    i = 0
     while True:
         Controler.run()
+        if i >= 60:
+            i = 0
+            Controler.log()
         time.sleep(1)
+        i += 1
