@@ -7,13 +7,13 @@ class Controler:
 
     def __init__(self):
         self.pin_map = {
-            'IN1': 4,
+            'IN1': 16,
             'IN2': 17,
             'IN3': 27,
-            'IN4': 22,
-            'IN5': 18,
-            'IN6': 24,
-            'IN7': 16,
+            'IN4': 18,
+            'IN5': 24,
+            'IN6': 22,
+            'IN7': 4,
             'IN8': 20,
             'DHT11': 21
         }
